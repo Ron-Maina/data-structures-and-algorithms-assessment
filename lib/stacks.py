@@ -1,6 +1,6 @@
 def is_balanced(expression):
     stack = []
-    bracket_mapping = {')': '(', '}': '{', ']': '['}
+    mapper = {')': '(', '}': '{', ']': '['}
     
     for char in expression:
         if char in '({[':
@@ -9,7 +9,7 @@ def is_balanced(expression):
             if not stack:
                 return False
             top_element = stack.pop()
-            if bracket_mapping[char] != top_element:
+            if mapper[char] != top_element:
                 return False
     
     return not stack
